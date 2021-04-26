@@ -1,0 +1,55 @@
+<app-nav-bar [isCuentaAbierta] = "sesion"></app-nav-bar>
+
+<div *ngIf="!sesion; else noOpen">
+    {{redireccionar()}}    
+</div>
+
+<ng-template #noOpen>
+    <div class="p-grid">
+        <div class="p-col-1">
+
+        </div>
+        <div class="p-col-8">
+            <h1 class="p-text-center">Resultados</h1>
+            <div class="p-grid p-flex-column">
+
+                <div class="p-col animate__animated animate__lightSpeedInRight" *ngFor="let player of players">
+                    <h3>{{player.usuario}}</h3>
+                    <h3 class="text-layout">Nombre: Angel</h3>
+                    <h3 class="text-layout">Apellido: Abades</h3>
+                    <h3 class="text-layout">Ciudad o Pais: Angola</h3>
+                    <h3 class="text-layout">Pelicula: Azul</h3>
+                    <h3 class="text-layout">Flor o Fruto: Aguacate</h3>
+                </div>
+                <div class="p-col">
+                    <div class="p-grid">
+                        <div class="p-col-6 p-text-center">
+                            <button pButton pRipple type="button" label="TERMINAR" routerLink="/dashboard/final"  class="p-button-rounded p-button-danger"></button>
+                        </div>
+                        <div class="p-col-6 p-text-center">
+                            <button pButton type="button" label="OTRA LETRA" routerLink="/dashboard/letras" class="p-button-rounded p-button-info"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-col-3">
+            <h1 class="p-text-center">Chat</h1>
+            <div class="p-grid p-flex-column animate__animated animate__flipInY">
+                <div class="p-col">
+                    <h5 class="text-layout">NoobMaster: No esta bien la ciudad.</h5>
+                </div>
+                <div class="p-col">
+                    <h5 class="text-layout">santi513: claro que esta bien.</h5>
+                </div>
+                <div class="p-col">
+                    <span class="p-input-icon-right">
+                        <i class="pi pi-send"></i>
+                        <input type="text" pInputText value="No es verdad">        
+                    </span>
+                    <button pButton type="button" routerLink="/dashboard/video" icon="pi pi-video" class="p-button-raised p-button-rounded"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

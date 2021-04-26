@@ -1,0 +1,29 @@
+<app-nav-bar [isCuentaAbierta] = "sesion"></app-nav-bar>
+<div class="p-grid">
+    <div class="p-col-2">
+        
+    </div>
+    <div class="p-col-8">
+        <div class="p-grid p-flex-column">
+            <div class="p-col p-text-center">
+                <h1 class="text-layout p-text-italic" style="font-size: 50px; color: brown;">Bienvenido</h1>
+            </div>
+            <div class="p-col p-text-justify text-layout animate__animated animate__rotateInUpRight">
+                <p-divider></p-divider>
+                <h2 style="font-size: 30px; color: blueviolet;" class="p-text-center animate__animated animate__fadeInRightBig">Datos generales</h2>
+                <h2> Nombre : {{this.player.nombre +" "+ this.player.apeP + " " + this.player.apeM}}</h2>
+                <h2> Usuario : {{this.player.usuario}}</h2>
+                <h2> Email : {{this.player.email}}</h2>
+                <p-divider></p-divider>
+                <h2 class="p-text-center" style="font-size: 30px; color: blueviolet;"> Historial de partidas </h2>
+                
+                <h2> Jugados : {{this.player.partidas}}</h2>
+                <h2> Perdidos : {{this.player.perdidas}}</h2>
+                <h2> Ganados : {{this.player.ganadas}}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="p-col-2">
+
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<app-nav-bar [isCuentaAbierta] = "sesion"></app-nav-bar>
+
+<div *ngIf="!sesion; else noOpen">
+    {{redireccionar()}}    
+</div>
+
+<ng-template #noOpen>
+    <div class="p-grid">
+        <div class="p-col-2">
+
+        </div>
+        <div class="p-col-8 p-text-center">
+            <h1 class="animate__animated animate__zoomInRight" style="font-size: 150pt; color: blue;">GANADOR</h1>
+            <h1 class="animate__animated animate__rotateInUpRight" style="color: brown;">{{player.usuario}}</h1>
+            <div class="p-grid">
+                <div class="p-col-12 p-text-center">
+                    <button pButton pRipple type="button" label="REGRESAR" routerLink="/dashboard"  class="p-button-rounded p-button-warinig"></button>
+                </div>
+            </div>
+        </div>
+        <div class="p-col-2">
+
+        </div>
+    </div>
+</ng-template>

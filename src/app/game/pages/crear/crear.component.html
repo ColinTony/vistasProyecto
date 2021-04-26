@@ -1,0 +1,80 @@
+<app-nav-bar [isCuentaAbierta] = "sesion"></app-nav-bar>
+
+<div *ngIf="!sesion; else noOpen">
+    {{redireccionar()}}    
+</div>
+
+<ng-template #noOpen>
+    <div class="p-grid">
+        <div class="p-col-2">
+
+        </div>
+        <div class="p-col-8">
+            <h1 class="p-text-center animate__animated animate__fadeInLeft" style="font-size: 50px; color: chocolate;">Crear sala</h1>
+            <div class="p-grid p-flex-column">
+                <div class="p-colum p-text-center">
+                    <h2 class="text-layout animate__animated animate__backInRight">Codigo: as54d6as4d6a5</h2> 
+                </div>
+                <p-divider></p-divider>
+            </div>
+            <div class="p-grid p-flex-column">
+                <div class="p-col p-text-center">
+                    <h2 class="animate__animated animate__tada">Configurando...</h2>
+                    <p-divider></p-divider>
+                </div>
+                <div class="p-col">
+                    <h2 class="p-text-center" style="font-size: 55px; color:darkgreen;">Categorias</h2>
+                    <div *ngFor="let cat of categorias">
+                        <h3>{{cat}}</h3>
+                    </div>
+                </div>
+                <div class="p-col">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-check-square"></i></span>
+                        <input type="text" #txtAddCat pInputText placeholder="nueva categoria" class="animate__animated animate__backInUp">   
+                    </div>
+                    <p-divider></p-divider>
+                    <div class="p-col">
+                        <div class="p-grid">
+                            <div class="p-col-6 p-text-center">
+                                <button pButton pRipple type="button" label="Añadir" (click)="addCat()" 
+                                class="p-button-rounded p-button-warning animate__animated animate__fadeInUpBig"></button>
+                            </div>
+                            <div class="p-col-6 p-text-center">
+                                <button pButton pRipple type="button" label="Borrar" (click)="borrar()" 
+                                class="p-button-rounded p-button-danger animate__animated animate__fadeInUpBig"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col">
+                    <p-divider></p-divider>
+                </div>
+                <div class="p-col">
+                    <div class="p-grid p-text-center">
+                        <div class="p-col-5"></div>
+                        <div class="p-field p-col-2 p-md-3">
+                            <label for="minmax-buttons">Numero de jugadores</label>
+                            <p-inputNumber mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="2" [max]="10">
+                            </p-inputNumber>
+                        </div>
+                        <div class="p-col-5"></div>
+                    </div>
+                </div>
+                <div class="p-col">
+                    <div class="p-grid">
+                        <div class="p-col-6 p-text-center">
+                            <button pButton pRipple type="button" label="CANCELAR" routerLink="/dashboard"  class="p-button-rounded p-button-danger"></button>
+                        </div>
+                        <div class="p-col-6 p-text-center">
+                            <button pButton type="button" routerLink="/dashboard/esperando" label="EMPEZAR" class="p-button-rounded p-button-info"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-col-2">
+
+        </div>
+    </div>
+</ng-template>

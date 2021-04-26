@@ -1,0 +1,35 @@
+<app-nav-bar [isCuentaAbierta] = "sesion"></app-nav-bar>
+
+<div *ngIf="!sesion; else noOpen">
+    {{redireccionar()}}    
+</div>
+
+<ng-template #noOpen>
+    <div class="p-grid">
+        <div class="p-col-2">
+
+        </div>
+        <div class="p-col-8">
+            <div class="p-grid p-flex-column">
+                <div class="p-col">
+                    <h1 class="p-text-center"> Presiona BASTA cuando quieras parar </h1>
+                </div>
+                <div class="p-col">
+                    <p-divider></p-divider>
+                </div>
+                <div class="p-col">
+                    <h1 class="p-text-center">{{letra}}</h1>
+                </div>
+                <div class="p-col">
+                    <p-divider></p-divider>
+                </div>
+                <div class="p-col p-text-center">
+                    <p-button class="p-button-lg" label="BASTA" routerLink="/dashboard/jugando" icon="pi pi-check" iconPos="left"></p-button>
+                </div>
+            </div>
+        </div>
+        <div class="p-col-2">
+
+        </div>
+    </div>
+</ng-template>

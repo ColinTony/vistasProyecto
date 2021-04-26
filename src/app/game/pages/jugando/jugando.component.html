@@ -1,0 +1,27 @@
+<app-nav-bar [isCuentaAbierta] = "sesion"></app-nav-bar>
+
+<div *ngIf="!sesion; else noOpen">
+    {{redireccionar()}}    
+</div>
+
+<ng-template #noOpen>
+    <div class="p-grid">
+        <div class="p-col-2">
+
+        </div>
+        <div class="p-col-8">
+            <div class="p-text-center animate__animated animate__fadeInRight" *ngFor="let i of categorias">
+                <h5>{{i.nombre}}</h5>
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText>
+                </span>
+            </div>
+            <p-divider></p-divider>
+            <div class="p-grid">
+                <div class="p-col-12 p-text-center">
+                    <button pButton type="button" label="BASTA" routerLink="/dashboard/resultados" class="p-button-rounded p-button-info"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

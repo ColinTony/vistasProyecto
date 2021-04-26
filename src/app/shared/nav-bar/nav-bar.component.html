@@ -1,0 +1,11 @@
+
+<div *ngIf="!isCuentaAbierta; else cuentaOpen">
+    <p-menubar [model]="itemsSinCuenta">
+    </p-menubar>
+</div>
+<div>
+    <ng-template #cuentaOpen>
+        <p-menubar [model]="itemsCuentaOpen">
+        </p-menubar>
+    </ng-template>
+</div>

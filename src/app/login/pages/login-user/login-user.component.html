@@ -1,0 +1,56 @@
+<app-nav-bar [isCuentaAbierta] = "sesion"></app-nav-bar>
+<div *ngIf="sesion; else noOpen">
+    {{redireccionar()}}    
+</div>
+
+<ng-template #noOpen>
+    <div class="p-grid animate__animated animate__backInDown">
+        <div class="p-col-12">
+            <div class="text-layout p-text-italic p-text-bold">
+                <h1 class="p-text-center">PEER TO BASTA</h1>
+            </div>
+        </div>
+    </div>
+    <div class="p-grid">
+        <div class="p-col-3">
+        </div>
+        <div class="p-col-6 p-ai-stretch vertical-container p-shadow-21 animate__animated animate__backInLeft animate__delay-1s">
+            <div class="text-layout">
+                <h1 class="p-text-center p-text-italic">
+                    Iniciar Sesion
+                </h1>
+                <div class="p-grid p-flex-column">
+                    <div class="p-col">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon"><i class="pi pi-user animate__animated animate__backInRight animate__delay-2s"></i></span>
+                            <input type="text" pInputText placeholder="Usuario" >         
+                        </div> 
+                    </div>
+                    <div class="p-col">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon"><i class="pi pi-lock animate__animated animate__backInRight animate__delay-2s"></i></span>
+                            <input type="password" pInputText placeholder="Contraseña">         
+                        </div> 
+                    </div>
+                    <div class="p-col">
+                        <p-divider></p-divider>
+                    </div>
+                    <div class="p-col">
+                        <div class="p-grid">
+                            <div class="p-col-6 p-text-center">
+                                <button pButton pRipple type="button" routerLink="/register" label="REGISTRARSE" class="p-button-rounded p-button-success animate__animated animate__bounce animate__delay-2s"></button>
+                            </div>
+                            <div class="p-col-6 p-text-center">
+                                <button pButton type="button" (click)="entrar()" label="INICIAR SESION"  class="p-button-rounded p-button-warning animate__animated animate__bounce animate__delay-2s"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="p-col-3">
+            
+        </div>
+    </div>
+</ng-template>
